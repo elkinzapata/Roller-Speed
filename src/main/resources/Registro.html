@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Registro de Aspirantes</title>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: nav"></div>
+    <h2>Registro de Aspirantes</h2>
+    <form th:action="@{/aspirantes/guardar}" method="post" th:object="${aspirante}">
+        <label>Nombre:</label> <input type="text" th:field="*{nombre}" required><br>
+        <label>Fecha de Nacimiento:</label> <input type="date" th:field="*{fechaNacimiento}" required><br>
+        <label>Género:</label>
+        <select th:field="*{genero}">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select><br>
+        <label>Correo:</label> <input type="email" th:field="*{correo}" required><br>
+        <label>Teléfono:</label> <input type="text" th:field="*{telefono}" required><br>
+        <label>Método de Pago:</label> 
+        <select th:field="*{metodo de pago}">
+            <option value="Transaccion">Transaccion</option>
+            <option value="Efectivo">Efectivo</option>
+        </select><br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
