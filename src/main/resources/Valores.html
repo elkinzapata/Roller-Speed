@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-
+   
 </head>
 <body>
     <div class="navbar">
@@ -15,7 +14,7 @@
     </div>
 </body>
 <head>
-    <title>Roller Speed</title>
+    <title>Valores</title>
     <style>
         body {
             font-family: sans-serif;
@@ -45,24 +44,21 @@
             overflow: hidden;
             padding: 20px;
         }
-        h1 {
-            text-align: center;
+        h2 {
             color: #333;
         }
-        .nav-links {
-            text-align: center;
+        .back-link {
+            display: block;
             margin-top: 20px;
-        }
-        .nav-links a {
-            display: inline-block;
-            margin: 0 10px;
             padding: 10px 20px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            width: 100px;
+            text-align: center;
         }
-        .nav-links a:hover {
+        .back-link:hover {
             background-color: #0056b3;
         }
     </style>
@@ -70,9 +66,22 @@
 <body>
     <div class="navbar" th:replace="fragments/navbar :: nav"></div>
     <div class="container">
-        <h1>Bienvenido a Roller Speed</h1>
-        <p>¡Prepárate para experimentar la emoción del patinaje!</p>
-      
+        <h2>Nuestros valores</h2>
+        <br>
+        <p> 1. Disciplina: Fomentamos el compromiso y la perseverancia para alcanzar el crecimiento personal y deportivo.
+            <br/>
+            2. Pasión: Inspiramos amor por el patinaje y la actividad física en cada entrenamiento.
+            <br/>
+            3. Seguridad: Priorizamos un ambiente seguro, promoviendo técnicas adecuadas y el uso de equipo de protección.
+            <br>
+            4. Respeto: Valoramos el compañerismo, la inclusión y el respeto mutuo entre alumnos, entrenadores y comunidad.
+            <br>
+            5. Trabajo en equipo: Enseñamos la importancia de la cooperación y el apoyo entre patinadores.
+            <br>
+            6. Superación: Motivamos a cada alumno a desafiar sus límites y mejorar constantemente.
+            <br>
+            7. Diversión: Creemos que el aprendizaje debe ser dinámico y agradable para desarrollar confianza y amor por el deporte.</p>
+       
     </div>
 </body>
 </html>
