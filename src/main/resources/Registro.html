@@ -14,7 +14,7 @@
     </div>
 </body>
 <head>
-    <title>Misión</title>
+    <title>Registro</title>
     <style>
         body {
             font-family: sans-serif;
@@ -153,7 +153,7 @@
         <form th:action="@{/aspirantes/guardar}" method="post" th:object="${aspirante}">
             <div class="form-group">
                 <label for="id">Id:</label>
-                <input type="text" id="id" th:field="*{nombre}" required>
+                <input type="text" id="id" th:field="*{id}" required>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
@@ -187,8 +187,10 @@
             </div>
             <button type="submit" class="submit-button">Registrar</button>
         </form>
-    </main>
 
+        
+    </main>
+    <p th:if="${param.success}" style="color: green;">¡Registro exitoso!</p>
     <footer>
         </footer>
 </body>
