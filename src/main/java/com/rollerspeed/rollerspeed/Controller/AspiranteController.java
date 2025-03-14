@@ -2,18 +2,17 @@ package com.rollerspeed.rollerspeed.Controller; /* - Define que esta clase perte
                                                    - Los paquetes en Java se usan para organizar las clases y evitar conflictos de nombres.
                                                    - Controller indica que este paquete contiene controladores, es decir, clases que manejan peticiones HTTP en Spring Boot. */
 
-import org.springframework.ui.Model; // Permite enviar datos desde el controlador a la vista (HTML, JSP, etc.).
-import com.rollerspeed.rollerspeed.Repository.AspiranteRepository; // Repositorio que interactúa con la base de datos para la entidad Aspirante.
-
 import org.springframework.beans.factory.annotation.Autowired; // Inyección de dependencias automática de Spring. Permite que Spring cree e inyecte el objeto AspiranteRepository sin necesidad de instanciarlo manualmente.
 import org.springframework.stereotype.Controller; // Define esta clase como un controlador en Spring Boot, que maneja peticiones HTTP.
-import org.springframework.web.bind.annotation.PostMapping; // Define un método que manejará solicitudes HTTP POST.
-import org.springframework.web.bind.annotation.ModelAttribute; // Vincula un objeto de modelo con los datos enviados desde un formulario HTML.
-import org.springframework.web.bind.annotation.RequestMapping; // Define la URL base para las peticiones que manejará este controlador.
-import com.rollerspeed.rollerspeed.Model.Aspirante; // Importa la clase Aspirante, que representa la entidad en la base de datos.
-import com.rollerspeed.rollerspeed.Service.AspiranteService; // Importa la capa de servicio de Aspirante, donde se manejan reglas de negocio.
+import org.springframework.ui.Model; // Permite enviar datos desde el controlador a la vista (HTML, JSP, etc.).
 import org.springframework.web.bind.annotation.GetMapping; // Define un método que manejará solicitudes HTTP GET.
-import org.springframework.web.bind.annotation.RequestParam; // Permite recibir parámetros desde la URL en las peticiones.
+import org.springframework.web.bind.annotation.ModelAttribute; // Vincula un objeto de modelo con los datos enviados desde un formulario HTML.
+import org.springframework.web.bind.annotation.PostMapping; // Define un método que manejará solicitudes HTTP POST.
+import org.springframework.web.bind.annotation.RequestMapping; // Define la URL base para las peticiones que manejará este controlador.
+
+import com.rollerspeed.rollerspeed.Model.Aspirante; // Importa la clase Aspirante, que representa la entidad en la base de datos.
+import com.rollerspeed.rollerspeed.Repository.AspiranteRepository; // Repositorio que interactúa con la base de datos para la entidad Aspirante.
+
 
 /* 
    ¿Para qué sirve todo esto en conjunto?
@@ -43,7 +42,7 @@ public String mostrarformularioRegistro(Model model) { // Model model: Spring us
     @PostMapping("/guardar") // Maneja peticiones POST cuando se envía el formulario.
     public String guardarAspirante(@ModelAttribute Aspirante aspirante) {  // Spring toma los datos del formulario y los convierte en un objeto Aspirante.
         aspiranteRepository.save(aspirante); //Guarda el objeto Aspirante en la base de datos.
-        return "redirect:/aspirante/registro-exitoso"; // Después de guardar, redirige al usuario a /aspirante/registro-exitoso.
+        return "Exito"; // Después de guardar, redirige al usuario a /aspirante/registro-exitoso.
     }
     
 }

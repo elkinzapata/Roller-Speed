@@ -21,7 +21,7 @@ public class RollerController {
     }
 
     @GetMapping("/listar") // @GetMapping("/listar") → Maneja las solicitudes GET en "/Roller/listar".
-    public String listarFlores(Model model) {
+    public String listarrollerspeed(Model model) {
         List<Roller> roller = RollerService.findAll(); // Llama al método findAll() del servicio RollerService para obtener todos los objetos Roller.
         model.addAttribute("Roller", roller); // Agrega la lista de objetos Roller al modelo, permitiendo que la vista acceda a ella.
         return "Roller"; // Retorna el nombre de la vista (Roller.html o Roller.jsp dependiendo de la configuración del proyecto).

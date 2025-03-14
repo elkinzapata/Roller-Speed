@@ -34,9 +34,9 @@ public class MainController { //public class MainController: Es la definición d
     }
 
     // Responde a "http://localhost:8080/servicios".
-    @GetMapping("/servicios")
-    public String servicios() {
-        return "servicios";
+    @GetMapping("/servicio")
+    public String servicio() {
+        return "servicio";
     }
 
     // Responde a "http://localhost:8080/eventos".
@@ -44,6 +44,19 @@ public class MainController { //public class MainController: Es la definición d
     public String eventos() {
         return "eventos";
     }
+
+    // Responde a "http://localhost:8080/clases".
+    @GetMapping("/clases")
+    public String clases() {
+        return "clases";
+    }
+
+    // Responde a "http://localhost:8080/registro".
+    @GetMapping("/registro")
+    public String registro() {
+        return "registro";
+    }
+
 }
 
 /*

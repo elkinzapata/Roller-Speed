@@ -11,7 +11,7 @@
         <a href="Valores.html">Valores</a>
         <a href="Servicio.html">Servicios</a>
         <a href="Eventos.html">Eventos</a>
-        <a href="Registro.html">Registro</a>
+        <a href="Clases.html">Clases</a>
     </div>
 </body>
 <head>
@@ -152,10 +152,16 @@
     <main class="container">
         <h2>Registro de Aspirantes</h2>
         <form th:action="@{/aspirantes/guardar}" method="post" th:object="${aspirante}">
+
+    
             <div class="form-group">
-                <label for="id">Id:</label>
-                <input type="text" id="id" th:field="*{id}" required>
-            </div>
+                <label for="opcionInscripcion">Opciones de Inscripción:</label>
+                <select id="opcionInscripcion" th:field="*{opcionesInscripcion}">
+                    <option value="none"></option>
+                    <option value="Estudiantes">Estudiantes</option>
+                    <option value="Inscripción de Instructor">Instructor</option>
+                </select>
+
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" th:field="*{nombre}" required>
@@ -181,7 +187,7 @@
             </div>
             <div class="form-group">
                 <label for="metodoPago">Método de Pago:</label>
-                <select id="metodoPago" th:field="*{metodo de pago}">
+                <select id="metodoPago" th:field="*{metodoPago}">
                     <option value="Transaccion">Transacción</option>
                     <option value="Efectivo">Efectivo</option>
                 </select>

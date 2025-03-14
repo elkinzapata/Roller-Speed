@@ -3,6 +3,8 @@
 
 package com.rollerspeed.rollerspeed.Model; // Indica que esta clase pertenece al paquete com.rollerspeed.rollerspeed.Model. / Organiza las clases dentro del proyecto.
 
+import java.util.Date;
+
 import jakarta.persistence.Column; // Define columnas de la tabla.
 import jakarta.persistence.Entity; // Convierte la clase en una tabla de la base de datos.
 import jakarta.persistence.GeneratedValue; // Configuran la clave primaria.
@@ -11,9 +13,7 @@ import jakarta.persistence.Id; // Configuran la clave primaria.
 import jakarta.persistence.Table; // Define el nombre de la tabla en la base de datos.
 import jakarta.persistence.Temporal; // Especifica que un campo representa una fecha.
 import jakarta.persistence.TemporalType;
-import lombok.Data; // Genera automáticamente los métodos getter y setter, toString(), equals(), etc.
-
-import java.util.Date; 
+import lombok.Data; // Genera automáticamente los métodos getter y setter, toString(), equals(), etc. 
 
 @Data // Permite que Lombok genere automáticamente los métodos como getters, setters, toString(), etc.
 @Entity // Indica que esta clase se almacenará en la base de datos como una tabla.
@@ -23,6 +23,10 @@ public class Aspirante {
     @Id // Indica que este atributo es la clave primaria de la tabla.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // La base de datos generará automáticamente el ID para cada nuevo registro.
     private Long id;
+
+    @Column(name = "Opciones de Inscripción")
+    private String opcionesInscripcion; // @Column(name = "Opciones de Inscripción"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio.
+    
 
     @Column(name = "Nombre", nullable = false) // @Column(name = "Nombre"): La columna en la base de datos se llamará "Nombre". / nullable = false: Este campo no puede estar vacío (es obligatorio).
     private String nombre; // Variable para almacenar el nombre del aspirante.
