@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html lang="es">
-<html xmlns:th="http://www.thymeleaf.org">
+
+<!DOCTYPE html>  <!-- Indica que el documento es HTML5. -->
+<html lang="es"> <!-- Define el idioma de la página como español. -->
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Motor de plantillas para Spring Boot -->
    
 </head>
+
+<!-- Se crea un menú de navegación con enlaces a otras páginas. -->
 <body>
-    <div class="navbar">
-        <li><a href="Index.html">Inicio</a></li>
-        <a href="Mision.html">Misión</a>
-        <a href="Vision.html">Visión</a>
-        <a href="Valores.html">Valores</a>
-        <a href="Servicio.html">Servicios</a>
-        <a href="Eventos.html">Eventos</a>
-        <a href="Registro.html">Registro</a>
+    <div class="navbar"> <!-- Barra de navegación para enlazar a otras páginas -->
+        <li><a href="Index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+        <a href="Mision.html">Misión</a> <!-- Enlace a la página de Misión -->
+        <a href="Vision.html">Visión</a> <!-- Enlace a la página de Visión -->
+        <a href="Valores.html">Valores</a> <!-- Enlace a la página de Valores -->
+        <a href="Servicio.html">Servicios</a> <!-- Enlace a la página de Servicios -->
+        <a href="Eventos.html">Eventos</a> <!-- Enlace a la página de Eventos -->
+        <a href="Registro.html">Registro</a> <!-- Enlace a la página de Registro -->
+
+        <!-- Muestra una imagen con la clase logo // Usa position: absolute; para posicionarla en la esquina superior derecha. --> 
         <img class="logo" src="https://scontent.fnva1-1.fna.fbcdn.net/v/t39.30808-6/476825952_1244944777633953_470320372472426980_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=z5JWDNXAEgcQ7kNvgFD3lrt&_nc_oc=Adhh-lkIuz0gL94grQcCnasjaSWr_dmYeLjhsRTQUOOE3rYSD4hIlnWBQNVWPykwGrw&_nc_zt=23&_nc_ht=scontent.fnva1-1.fna&_nc_gid=B8SZi1mTn5QVd6hnStNumg&oh=00_AYF3qLE5EQhszRkfktcI66jVogsROaeB5Q2faBsdbnrJ2A&oe=67DA81A2" alt="Logo"
         style="position: absolute; top: 10px; right: 10px; width: 90px; height: auto;">
 
-    </div>
+    </div> <!-- Cierre del div de navegación -->
     
     </div>
-</body>
+</body> <!-- Cierre del cuerpo del documento -->
 <head>
-    <title>Clases</title>
-    <style>
-        body {
+    <title>Clases</title>  <!-- Título de la pestaña -->
+    
+
+    <style> /* Sección de estilos en línea */
+        body { /* Estilos generales del cuerpo */
             font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Fondo gris claro */
         }
-        .navbar {
-            background-color: #333;
+        .navbar { /* Estilos de la barra de navegación */
+            background-color: #333; /* Fondo oscuro */
             overflow: hidden;
         }
-        .navbar a {
+        .navbar a { /* Estilos de los enlaces dentro de la barra de navegación */
             float: left;
             display: block;
             color: white;
@@ -40,20 +47,20 @@
             padding: 14px 20px;
             text-decoration: none;
         }
-        .navbar a:hover {
-            background-color: #ddd;
+        .navbar a:hover { /* Efecto hover en los enlaces de la barra de navegación */
+            background-color: #ddd; /* Cambia el fondo al pasar el mouse */
             color: black;
         }
-        .container {
+        .container { /* Estilos generales del contenedor */
             width: 80%;
             margin: auto;
             overflow: hidden;
             padding: 20px;
         }
-        h2 {
+        h2 { /* Estilo para los títulos de segundo nivel */
             color: #333;
         }
-        .back-link {
+        .back-link { /* Estilos para un botón de retroceso */
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -64,86 +71,87 @@
             width: 100px;
             text-align: center;
         }
-        .back-link:hover {
+        .back-link:hover { /* Efecto hover del botón de retroceso */
             background-color: #0056b3;
         }
-    </style>
+    </style> <!-- Fin de los estilos -->
 
 <head>
-    <title>Horarios de Patinaje</title>
-    <style>
-        body {
+    <title>Horarios de Patinaje</title> <!-- Título de la página -->
+    <style> /* Sección de estilos específica para los horarios */
+        body { /* Estilos del cuerpo */
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
-        .container {
+        .container { /* Contenedor principal con margen y padding */
             width: 80%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        h1 { /* Estilo del título principal */
             text-align: center;
             color: #333;
         }
-        h2 {
+        h2 { /* Estilo de los títulos secundarios */
             color: #555;
             margin-top: 30px;
         }
-        table {
+        table { /* Estilos generales de la tabla */
             border-collapse: collapse;
             width: 100%;
             margin-top: 10px;
         }
-        th, td {
+        th, td { /* Estilos de celdas de la tabla */
             border: 1px solid #ddd;
             padding: 12px 15px;
             text-align: left;
         }
-        th {
-            background-color: #4CAF50;
+        th { /* Estilo de los encabezados de tabla */
+            background-color: #4CAF50; /* Fondo verde para encabezados */
             color: white;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        tr:nth-child(even) { /* Alternar colores en filas */
+            background-color: #f2f2f2; /* Alterna los colores de filas */
         }
-        tr:hover {
-            background-color: #ddd;
+        tr:hover { /* Resaltar fila al pasar el cursor */
+            background-color: #ddd; /* Efecto hover en las filas */
         }
-    </style>
-</head>
-<body>
+    </style> <!-- Fin de estilos -->
+</head> <!-- Cierre del head -->
+<body> <!-- Inicio del cuerpo de la página -->
 
-    <div class="container">
-        <h1>Horarios de Patinaje</h1>
+    <div class="container"> <!-- Contenedor principal de la sección de horarios -->
+        <h1>Horarios de Patinaje</h1> <!-- Título principal -->
     
+          <!-- Tabla de horarios para niños -->
         <h2>Niños (6-12 años)</h2>
         <table>
-            <tr>
+            <tr> <!-- Encabezados de la tabla -->
                 <th>Día</th>
                 <th>Hora</th>
                 <th>Lugar</th>
                 <th>Fecha de inicio</th>
                 <th>Instructor</th>
             </tr>
-            <tr>
+            <tr> <!-- Primera fila de datos -->
                 <td>Lunes</td>
                 <td>16:00 - 17:00</td>
                 <td>Pista Municipal</td>
                 <td>01/03/2025</td>
                 <td>Ana García</td>
             </tr>
-            <tr>
+            <tr> <!-- Segunda fila -->
                 <td>Miércoles</td>
                 <td>16:00 - 17:00</td>
                 <td>Pista Municipal</td>
                 <td>01/03/2025</td>
                 <td>Ana García</td>
             </tr>
-            <tr>
+            <tr> <!-- Tercera fila -->
                 <td>Viernes</td>
                 <td>17:00 - 18:00</td>
                 <td>Pista Cubierta</td>
@@ -152,30 +160,31 @@
             </tr>
         </table>
     
+          <!-- Tabla de horarios para adolescentes -->
         <h2>Adolescentes (13-17 años)</h2>
         <table>
-            <tr>
+            <tr> <!-- Encabezados de la tabla -->
                 <th>Día</th>
                 <th>Hora</th>
                 <th>Lugar</th>
                 <th>Fecha de inicio</th>
                 <th>Instructor</th>
             </tr>
-            <tr>
+            <tr> <!-- Primera fila de datos -->
                 <td>Martes</td>
                 <td>17:00 - 18:00</td>
                 <td>Pista Cubierta</td>
                 <td>01/03/2025</td>
                 <td>Carlos Pérez</td>
             </tr>
-            <tr>
+            <tr> <!-- Segunda fila -->
                 <td>Jueves</td>
                 <td>17:00 - 18:00</td>
                 <td>Pista Cubierta</td>
                 <td>01/03/2025</td>
                 <td>Carlos Pérez</td>
             </tr>
-            <tr>
+            <tr> <!-- Tercera fila -->
                 <td>Sábado</td>
                 <td>10:00 - 11:00</td>
                 <td>Pista Municipal</td>
@@ -184,30 +193,31 @@
             </tr>
         </table>
     
+        <!-- Tabla de horarios para adultos -->
         <h2>Adultos (18+ años)</h2>
         <table>
-            <tr>
+            <tr> <!-- Encabezados de la tabla -->
                 <th>Día</th>
                 <th>Hora</th>
                 <th>Lugar</th>
                 <th>Fecha de inicio</th>
                 <th>Instructor</th>
             </tr>
-            <tr>
+            <tr> <!-- Primera fila de datos -->
                 <td>Lunes</td>
                 <td>19:00 - 20:00</td>
                 <td>Pista Cubierta</td>
                 <td>01/03/2025</td>
                 <td>Laura Ruiz</td>
             </tr>
-            <tr>
+            <tr> <!-- Segunda fila -->
                 <td>Miércoles</td>
                 <td>19:00 - 20:00</td>
                 <td>Pista Cubierta</td>
                 <td>01/03/2025</td>
                 <td>Laura Ruiz</td>
             </tr>
-            <tr>
+            <tr> <!-- Tercera fila -->
                 <td>Sábado</td>
                 <td>11:00 - 12:00</td>
                 <td>Pista Municipal</td>
@@ -215,7 +225,7 @@
                 <td>David López</td>
             </tr>
         </table>
-    </div>
+    </div> <!-- Fin del contenedor principal -->
 
-</body>
-</html>
+</body> <!-- Cierre del cuerpo de la página -->
+</html> <!-- Cierre del documento HTML -->

@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML -->
+<html lang="es"> <!-- Inicio del documento HTML con el idioma español -->
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Definición del espacio de nombres para usar Thymeleaf (una plantilla de Java para Spring Boot) -->
    
 </head>
-<body>
-    <div class="navbar">
-        <li><a href="Index.html">Inicio</a></li>
-        <a href="Mision.html">Misión</a>
-        <a href="Vision.html">Visión</a>
-        <a href="Valores.html">Valores</a>
-        <a href="Servicio.html">Servicios</a>
-        <a href="Clases.html">Clases</a>
-        <a href="Registro.html">Registro</a>
+<body> <!-- Barra de navegación con enlaces a diferentes páginas -->
+    <div class="navbar"> <!-- Barra de navegación para enlazar a otras páginas -->
+        <li><a href="Index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+        <a href="Mision.html">Misión</a> <!-- Enlace a la página de Misión -->
+        <a href="Vision.html">Visión</a> <!-- Enlace a la página de Visión -->
+        <a href="Valores.html">Valores</a> <!-- Enlace a la página de Valores -->
+        <a href="Servicio.html">Servicios</a> <!-- Enlace a la página de Servicios -->
+        <a href="Clases.html">Clases</a> <!-- Enlace a la página de Clases -->
+        <a href="Registro.html">Registro</a> <!-- Enlace a la página de Registro -->
+
+        <!-- Muestra una imagen con la clase logo // Usa position: absolute; para posicionarla en la esquina superior derecha. --> 
         <img class="logo" src="https://scontent.fnva1-1.fna.fbcdn.net/v/t39.30808-6/476825952_1244944777633953_470320372472426980_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=z5JWDNXAEgcQ7kNvgFD3lrt&_nc_oc=Adhh-lkIuz0gL94grQcCnasjaSWr_dmYeLjhsRTQUOOE3rYSD4hIlnWBQNVWPykwGrw&_nc_zt=23&_nc_ht=scontent.fnva1-1.fna&_nc_gid=B8SZi1mTn5QVd6hnStNumg&oh=00_AYF3qLE5EQhszRkfktcI66jVogsROaeB5Q2faBsdbnrJ2A&oe=67DA81A2" alt="Logo"
         style="position: absolute; top: 10px; right: 10px; width: 90px; height: auto;">
 
@@ -19,71 +21,93 @@
     </div>
 </body>
 <head>
-    <title>Eventos</title>
+    <title>Eventos</title>  <!-- Definición del título de la página que aparece en la pestaña del navegador -->
+    
+    <!-- Inicio de la sección de estilos CSS para dar formato a la página -->
     <style>
+        
+        /* Aplica un estilo general al cuerpo de la página */
         body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: sans-serif; /* Fuente de texto */
+            margin: 0; /* Elimina márgenes */
+            padding: 0; /* Elimina espacios internos */
+            background-color: #f4f4f4; /* Color de fondo */
         }
+
+        /* Estiliza la barra de navegación */
         .navbar {
-            background-color: #333;
-            overflow: hidden;
+            background-color: #333; /* Fondo oscuro */
+            overflow: hidden; /* Asegura que no haya desbordamientos */
         }
+
+        /* Define el estilo de los enlaces dentro de la barra de navegación */
         .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
+            float: left; /* Alinea los elementos a la izquierda */
+            display: block; /* Convierte los enlaces en bloques */
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto */
+            padding: 14px 20px; /* Espaciado interno */
+            text-decoration: none; /* Elimina subrayado */
         }
+
+        /* Cambia el color cuando el usuario pasa el cursor sobre un enlace */
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #ddd; /* Fondo claro */
+            color: black; /* Texto negro */
         }
+
+        /* Define el ancho del contenido y su alineación */
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
+            width: 80%; /* Usa el 80% del ancho de la pantalla */
+            margin: auto; /* Centra el contenedor */
+            overflow: hidden; /* Evita desbordamientos */
+            padding: 20px; /* Espaciado interno */
         }
+
+        /* Estilo del título principal */
         h2 {
-            color: #333;
+            color: #333; /* Color del texto */
         }
+
+        /* Botón de regreso */
         .back-link {
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #007bff; /* Azul */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 5px; /* Bordes redondeados */
             width: 100px;
             text-align: center;
         }
+
+        /* Cambia el color del botón al pasar el cursor */
         .back-link:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Azul oscuro */
         }
     </style>
 </head>
-<body>
-    <div class="navbar" th:replace="fragments/navbar :: nav"></div>
-    <div class="container">
-        <h2 style="text-align: center;">Nuestros Eventos</h2><br>
+<body> 
+    
+    <div class="navbar" th:replace="fragments/navbar :: nav"></div> <!-- Sección donde se insertará la barra de navegación con Thymeleaf -->
+    <div class="container"> <!-- Contenido principal de la página -->
+        <h2 style="text-align: center;">Nuestros Eventos</h2><br> <!-- Título centrado -->
+        <!-- Listado de eventos deportivos -->
         <p>🌟 Eventos Deportivos
             1. Campeonatos Internos: Competencias entre alumnos para medir su progreso y motivación.
             Exhibiciones de Patinaje: Presentaciones abiertas al público donde los alumnos muestran sus habilidades.
             Carreras de Velocidad: Torneos de patinaje de velocidad en diferentes categorías.
             Jornadas de Evaluación: Pruebas de nivel para que los alumnos midan su avance y obtengan certificaciones.</p>
             <br>
+           <!-- Listado de eventos recreativos -->
            <p> 🎊 Eventos Recreativos
             Patinatas Nocturnas: Recorridos grupales por la ciudad o parques en un ambiente seguro y divertido.
             Día de la Familia sobre Ruedas: Evento donde los alumnos pueden invitar a sus familias a patinar juntos.
             Fiesta Temática sobre Patines: Eventos con música, disfraces y actividades lúdicas en la pista.
             Rally sobre Patines: Carrera con obstáculos y retos para disfrutar en equipo.</p>
             <br>
+            <!-- Listado de eventos de formación y comunidad -->
             <p>✍ Eventos de Formación y Comunidad
             Clínicas y Talleres Especializados: Jornadas con entrenadores expertos en diferentes disciplinas del patinaje.
             Charlas sobre Seguridad y Mantenimiento: Conferencias sobre uso adecuado del equipo y técnicas de prevención.

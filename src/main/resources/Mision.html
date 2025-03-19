@@ -4,14 +4,14 @@
    
 </head>
 <body>
-    <div class="navbar">
-        <li><a href="Index.html">Inicio</a></li>
-        <a href="Vision.html">Visión</a>
-        <a href="Valores.html">Valores</a>
-        <a href="Servicio.html">Servicios</a>
-        <a href="Eventos.html">Eventos</a>
-        <a href="Clases.html">Clases</a>
-        <a href="Registro.html">Registro</a>
+    <div class="navbar"> <!-- Barra de navegación para enlazar a otras páginas -->
+        <li><a href="Index.html">Inicio</a></li> <!-- Enlace a la página de inicio -->
+        <a href="Vision.html">Visión</a> <!-- Enlace a la página de Visión -->
+        <a href="Valores.html">Valores</a> <!-- Enlace a la página de Valores -->
+        <a href="Servicio.html">Servicios</a> <!-- Enlace a la página de Servicios -->
+        <a href="Eventos.html">Eventos</a> <!-- Enlace a la página de Eventos -->
+        <a href="Clases.html">Clases</a> <!-- Enlace a la página de Clases -->
+        <a href="Registro.html">Registro</a> <!-- Enlace a la página de Registro -->
         <img class="logo" src="https://scontent.fnva1-1.fna.fbcdn.net/v/t39.30808-6/476825952_1244944777633953_470320372472426980_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=z5JWDNXAEgcQ7kNvgFD3lrt&_nc_oc=Adhh-lkIuz0gL94grQcCnasjaSWr_dmYeLjhsRTQUOOE3rYSD4hIlnWBQNVWPykwGrw&_nc_zt=23&_nc_ht=scontent.fnva1-1.fna&_nc_gid=B8SZi1mTn5QVd6hnStNumg&oh=00_AYF3qLE5EQhszRkfktcI66jVogsROaeB5Q2faBsdbnrJ2A&oe=67DA81A2" alt="Logo"
         style="position: absolute; top: 10px; right: 10px; width: 90px; height: auto;">
 
@@ -68,9 +68,11 @@
     </style>
 </head>
 <body>
-    <div class="navbar" th:replace="fragments/navbar :: nav"></div>
-    <div class="container">
-        <h2 style="text-align: center;">Nuestra Mision</h2><br>
+    <div class="navbar" th:replace="fragments/navbar :: nav"></div> <!-- <div class="navbar">: Contenedor de la barra de navegación. // th:replace="fragments/navbar :: nav": Indica que Thymeleaf debe cargar un fragmento llamado navbar desde un archivo fragments.html. -->
+    <div class="container"> <!-- Contiene el texto de la misión. -->
+        <h2 style="text-align: center;">Nuestra Mision</h2><br> <!-- Define un título centrado. -->
+        
+        <!-- Contiene el texto descriptivo de la misión. -->
         <p>Nuestra misión es formar patinadores de todas las edades y niveles, brindando una enseñanza segura, divertida y profesional. Nos enfocamos en desarrollar habilidades técnicas, confianza y amor por el patinaje, fomentando el trabajo en equipo y un estilo de vida activo y saludable.</p>
        
     </div>
