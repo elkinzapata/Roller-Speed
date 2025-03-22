@@ -24,14 +24,14 @@ public class Aspirante {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // La base de datos generará automáticamente el ID para cada nuevo registro.
     private Long id;
 
-    @Column(name = "Opciones de Inscripción")
-    private String opcionesInscripcion; // @Column(name = "Opciones de Inscripción"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio.
+    @Column(name = "OpcionInscripcion")
+    private String opcionInscripcion; // @Column(name = "Opciones de Inscripción"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio.
     
 
-    @Column(name = "Nombre", nullable = false) // @Column(name = "Nombre"): La columna en la base de datos se llamará "Nombre". / nullable = false: Este campo no puede estar vacío (es obligatorio).
+    @Column(name = "nombre", nullable = false) // @Column(name = "Nombre"): La columna en la base de datos se llamará "Nombre". / nullable = false: Este campo no puede estar vacío (es obligatorio).
     private String nombre; // Variable para almacenar el nombre del aspirante.
 
-    @Column(name = "Fecha de Nacimiento", nullable = false) // Nombre de la columna en la base de datos.
+    @Column(name = "fechaNacimiento", nullable = false) // Nombre de la columna en la base de datos.
     @Temporal(TemporalType.DATE) // Indica que este campo almacena una fecha (día, mes y año).
     private Date fechaNacimiento; // Variable que guarda la fecha de nacimiento del aspirante.
 
@@ -44,11 +44,47 @@ public class Aspirante {
     @Column(name = "Telefono", nullable = false) // @Column(name = "Telefono"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio 
     private String telefono; // Guarda el número de teléfono del aspirante.
 
-    @Column(name = "Metodo de pago", nullable = false) // @Column(name = "Metodo de pago"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio.
+    @Column(name = "metodoPago", nullable = false) // @Column(name = "Metodo de pago"): Nombre de la columna en la base de datos. / nullable = false: Obligatorio.
     private String metodoPago; // Guarda el método de pago que usa el aspirante (Ejemplo: "Tarjeta", "Efectivo", "Transferencia").
 
     // Getters y setters
+    public Aspirante() {
+    }
+
+    public Aspirante(String opcionInscripcion,String nombre, Date fechaNacimiento,String genero,
+    String correo, String telefono,String metodoPago) {
+        this.opcionInscripcion = opcionInscripcion;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.genero = genero;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.metodoPago = metodoPago;   
+    }
+
+    public String getOpcionInscripcion() { return opcionInscripcion; }
+    public void setOpcionInscripcion(String opcionInscripcion) { this.opcionInscripcion = opcionInscripcion; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public Date getFechaNacimiento() { return fechaNacimiento; }
+    public void setFechaNacimiento(Date fechaNacimineto) { this.fechaNacimiento = fechaNacimineto; }
+
+    public String getGenero() { return genero; }
+    public void setGenero(String genero) { this.genero = genero; }
+
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
+
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public String getMetodoPago() { return metodoPago; }
+    public void setMetodoPago(String metodoPago) { this.metodoPago = metodoPago; }
 }
+   
+    
 
 /*
  📌 Resumen Final

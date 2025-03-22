@@ -25,7 +25,6 @@ Aplica inyección de dependencias (@Autowired) para manejar automáticamente los
 
 
 
-@SuppressWarnings("unused")
 @Controller // Indica que esta clase es un Controlador en Spring MVC./ Su propósito es manejar peticiones HTTP y retornar vistas.
 @RequestMapping("/aspirantes") // Define una URL base para todas las rutas de este controlador. / Esto significa que todas las rutas dentro de esta clase comenzarán con /aspirantes.
 public class AspiranteController {
@@ -33,18 +32,18 @@ public class AspiranteController {
     @Autowired // Inyecta automáticamente el AspiranteRepository para que podamos acceder a la base de datos sin instanciarlo manualmente.
     private AspiranteRepository aspiranteRepository; //Nos permite guardar y obtener aspirantes de la base de datos.
 
-@GetMapping("/registro") // Indica que cuando un usuario visite /aspirantes/registro, este método responderá.
-public String mostrarformularioRegistro(Model model) { // Model model: Spring usa el Model para enviar datos a la vista (HTML).
-    model.addAttribute("aspirante", new Aspirante()); //Crea un objeto vacío de Aspirante y lo envía a la vista. // Esto sirve para que el formulario HTML lo use en los campos.
-    return "Registro"; // Retorna la vista Registro.html o Registro.jsp, donde se mostrará el formulario.
-}
-
-    @PostMapping("/guardar") // Maneja peticiones POST cuando se envía el formulario.
-    public String guardarAspirante(@ModelAttribute Aspirante aspirante) {  // Spring toma los datos del formulario y los convierte en un objeto Aspirante.
-        aspiranteRepository.save(aspirante); //Guarda el objeto Aspirante en la base de datos.
-        return "Exito"; // Después de guardar, redirige al usuario a /aspirante/registro-exitoso.
+    @GetMapping("/aspirantes/registro")
+    public String mostrarFormularioRegistro(Model model) {
+        model.addAttribute("aspirante", new Aspirante());
+        return "Registro"; // Asegúrate de que Registro.html existe en templates
     }
-    
+
+
+    @PostMapping("/aspirantes/guardar")
+    public String guardarAspirante(@ModelAttribute Aspirante aspirante) {
+        aspiranteRepository.save(aspirante);
+        return "Exito"; // Asegúrate de que Exito.html existe en templates
+    }
 }
 
 /*

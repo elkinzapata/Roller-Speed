@@ -12,8 +12,9 @@
         <a href="Servicio.html">Servicios</a>
         <a href="Eventos.html">Eventos</a>
         <a href="Clases.html">Clases</a>
-        <img class="logo" src="https://scontent.fnva1-1.fna.fbcdn.net/v/t39.30808-6/476825952_1244944777633953_470320372472426980_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=z5JWDNXAEgcQ7kNvgFD3lrt&_nc_oc=Adhh-lkIuz0gL94grQcCnasjaSWr_dmYeLjhsRTQUOOE3rYSD4hIlnWBQNVWPykwGrw&_nc_zt=23&_nc_ht=scontent.fnva1-1.fna&_nc_gid=B8SZi1mTn5QVd6hnStNumg&oh=00_AYF3qLE5EQhszRkfktcI66jVogsROaeB5Q2faBsdbnrJ2A&oe=67DA81A2" alt="Logo"
-        style="position: absolute; top: 10px; right: 10px; width: 90px; height: auto;">
+        <a href="Acceso.html">Incio de Sesión </a>
+        <img class="logo" src="https://t3.ftcdn.net/jpg/03/84/54/80/360_F_384548092_jDV5vVhJp3R45fsn1E1Y0o2C9CtTNyHx.jpg" alt="Logo"
+        style="position: absolute; top: 10px; right: 10px; width: 50px; height: auto;">
 
     </div>
 </body>
@@ -154,15 +155,15 @@
 
     <main class="container">
         <h2>Registro de Aspirantes</h2>
-        <form th:action="@{/aspirantes/guardar}" method="post" th:object="${aspirante}">
+        <form th:action="@{/aspirantes/guardar}"th:object="${aspirante}" method="post">
 
     
             <div class="form-group">
                 <label for="opcionInscripcion">Opciones de Inscripción:</label>
-                <select id="opcionInscripcion" th:field="*{opcionesInscripcion}">
+                <select id="opcionInscripcion" th:field="*{opcionInscripcion}">
                     <option value="none"></option>
                     <option value="Estudiantes">Estudiantes</option>
-                    <option value="Inscripción de Instructor">Instructor</option>
+                    <option value="Instructor">Instructor</option>
                 </select>
 
             <div class="form-group">
@@ -195,12 +196,21 @@
                     <option value="Efectivo">Efectivo</option>
                 </select>
             </div>
-            <button type="submit" class="submit-button">Registrar</button>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Redirección</title>
+            </head>
+            <body>
+                <a href="Exito.html">
+                    <button type="button" class="submit-button">Registrar</button>
+                </a>
+            </body>
         </form>
 
         
     </main>
-    <p th:if="${param.success}" style="color: green;">¡Registro exitoso!</p>
+    <p th:if="${param.success}" style="color: green;">¡Registro exitoso!</p> <button type="submit" class="submit-button">Registrar</button>
     <footer>
         </footer>
 </body>

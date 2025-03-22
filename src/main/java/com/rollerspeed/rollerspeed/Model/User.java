@@ -8,10 +8,12 @@ import lombok.*; // Facilita la creación de métodos (getters, setters, constru
 
 import java.util.Set; // Permite manejar conjuntos de roles para cada usuario.
 
+
+import org.springframework.context.annotation.Role;
+
 @Entity // Indica que esta clase representa una tabla en la base de datos.
 @Table(name = "users") // Define que la tabla se llamará "users".
-@Getter // Lombok genera automáticamente los getters y setters.
-@Setter // Lombok genera automáticamente los getters y setters.
+ // Lombok genera automáticamente los getters y setters.
 @NoArgsConstructor // Crea un constructor vacío.
 @AllArgsConstructor // Crea un constructor con todos los atributos.
 public class User {
