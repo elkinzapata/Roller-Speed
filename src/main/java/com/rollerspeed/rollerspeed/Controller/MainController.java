@@ -1,74 +1,75 @@
-package com.rollerspeed.rollerspeed.Controller; // package com.rollerspeed.rollerspeed.Controller;
+package com.rollerspeed.rollerspeed.Controller;
 
-import org.springframework.stereotype.Controller; // @Controller: Indica que esta clase es un controlador de Spring MVC.
-import org.springframework.web.bind.annotation.GetMapping; // @GetMapping: Se usa para manejar solicitudes HTTP GET.
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.rollerspeed.rollerspeed.Repository.UserRepository;
+import com.rollerspeed.rollerspeed.Model.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-@Controller // @Controller: Le dice a Spring que esta clase manejará las solicitudes web.
+@Controller
+public class MainController {
 
-public class MainController { //public class MainController: Es la definición de la clase.
+    @Autowired
+    private UserRepository userRepository;
 
-    /* - Maneja las solicitudes a "http://localhost:8080/".
-       - Devuelve la vista "index", que normalmente es un archivo index.html en la carpeta templates.*/
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
+    @GetMapping("/login")
+    public String loginForm() {
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public ModelAndView login(@RequestParam String username, @RequestParam String password) {
+        User user = userRepository.findByUsername(username);
+        if (user != null && passwordEncoder.matches(password, user.getPassword())) {
+            return new ModelAndView("redirect:/");
+        }
+        return new ModelAndView("login");
+    }
+
     @GetMapping("/")
     public String home() {
         return "index";
     }
 
-    /* - Maneja la solicitud a "http://localhost:8080/mision".
-       - Devuelve la vista "mision.html". */
     @GetMapping("/mision")
     public String mision() {
         return "mision";
     }
 
-    //Similar al anterior, pero para "http://localhost:8080/vision".
     @GetMapping("/vision")
     public String vision() {
         return "vision";
     }
 
-    // Responde a "http://localhost:8080/valores".
     @GetMapping("/valores")
     public String valores() {
         return "valores";
     }
 
-    // Responde a "http://localhost:8080/servicios".
     @GetMapping("/servicio")
     public String servicio() {
         return "servicio";
     }
 
-    // Responde a "http://localhost:8080/eventos".
     @GetMapping("/eventos")
     public String eventos() {
         return "eventos";
     }
 
-    // Responde a "http://localhost:8080/clases".
     @GetMapping("/clases")
     public String clases() {
         return "clases";
     }
 
-    // Responde a "http://localhost:8080/registro".
     @GetMapping("/registro")
     public String registro() {
         return "registro";
     }
-
 }
-
-/*
-
-🔍 ¿Cómo funciona en la práctica?
-Cuando un usuario accede a una de estas URLs en su navegador, Spring Boot busca la vista correspondiente (por ejemplo, index.html, mision.html, etc.) dentro de la carpeta src/main/resources/templates/.
-
-📝 Resumen
-📌 Este controlador maneja solicitudes HTTP GET y devuelve páginas HTML desde la carpeta templates.
-📌 Es útil para definir la navegación básica de un sitio web en Spring Boot.
-📌 Para que funcione correctamente, necesitas las plantillas HTML en la carpeta templates.
-
-🚀 ¿Quieres agregar más funcionalidades, como pasar datos a las vistas? 
-
- */
