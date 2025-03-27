@@ -27,8 +27,21 @@ public class User {
                inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    // Método getter para password
+    // Métodos getter y setter para username
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    // Métodos getter y setter para password
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
