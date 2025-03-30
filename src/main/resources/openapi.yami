@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  title: RollerSpeed API
+  version: 1.0.0
+  description: |
+    API para la gestión de usuarios y funcionalidades de la aplicación RollerSpeed.
+    Esta API permite manejar el inicio de sesión, registro de usuarios y acceso a
+    diferentes secciones informativas dentro de la aplicación.
+
+paths:
+  /login:
+    get:
+      summary: Muestra el formulario de inicio de sesión.
+      description: |
+        Devuelve el formulario de inicio de sesión donde el usuario puede ingresar
+        sus credenciales para acceder a la plataforma.
+      responses:
+        '200':
+          description: Formulario de inicio de sesión mostrado.
+    post:
+      summary: Procesa el inicio de sesión del usuario.
+      description: |
+        Verifica las credenciales ingresadas por el usuario y, si son correctas,
+        lo redirige a la página principal.
+      parameters:
+        - name: username
+          in: query
+          required: true
+          description: Nombre de usuario del usuario.
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          description: Contraseña del usuario.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Redirige a la página principal si las credenciales son correctas.
+        '401':
+          description: Credenciales incorrectas.
+
+  /register:
+    get:
+      summary: Muestra el formulario de registro.
+      description: |
+        Devuelve la vista del formulario donde un nuevo usuario puede registrarse
+        en la plataforma proporcionando un nombre de usuario y una contraseña.
+      responses:
+        '200':
+          description: Formulario de registro mostrado.
+    post:
+      summary: Registra un nuevo usuario.
+      description: |
+        Crea un nuevo usuario con las credenciales proporcionadas y almacena
+        la información en la base de datos.
+      parameters:
+        - name: username
+          in: query
+          required: true
+          description: Nombre de usuario del nuevo usuario.
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          description: Contraseña del nuevo usuario.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Usuario registrado con éxito.
+
+  /setupUser:
+    post:
+      summary: Configura un usuario con credenciales predeterminadas.
+      description: |
+        Crea un usuario con un nombre de usuario y contraseña predefinidos
+        para propósitos administrativos o de prueba.
+      responses:
+        '200':
+          description: Usuario registrado con éxito.
+
+  /:
+    get:
+      summary: Muestra la página principal.
+      description: |
+        Devuelve la página principal de la aplicación RollerSpeed.
+      responses:
+        '200':
+          description: Página principal mostrada.
+
+  /mision:
+    get:
+      summary: Muestra la página de misión.
+      description: |
+        Proporciona información sobre la misión de RollerSpeed.
+      responses:
+        '200':
+          description: Página de misión mostrada.
+
+  /vision:
+    get:
+      summary: Muestra la página de visión.
+      description: |
+        Proporciona información sobre la visión de RollerSpeed.
+      responses:
+        '200':
+          description: Página de visión mostrada.
+
+  /valores:
+    get:
+      summary: Muestra la página de valores.
+      description: |
+        Proporciona información sobre los valores fundamentales de RollerSpeed.
+      responses:
+        '200':
+          description: Página de valores mostrada.
+
+  /servicio:
+    get:
+      summary: Muestra la página de servicio.
+      description: |
+        Describe los servicios que ofrece RollerSpeed.
+      responses:
+        '200':
+          description: Página de servicio mostrada.
+
+  /eventos:
+    get:
+      summary: Muestra la página de eventos.
+      description: |
+        Proporciona información sobre los próximos eventos organizados por RollerSpeed.
+      responses:
+        '200':
+          description: Página de eventos mostrada.
+
+  /clases:
+    get:
+      summary: Muestra la página de clases.
+      description: |
+        Presenta información sobre las clases disponibles en RollerSpeed.
+      responses:
+        '200':
+          description: Página de clases mostrada.
+
+  /registro:
+    get:
+      summary: Muestra la página de registro.
+      description: |
+        Devuelve la página donde los usuarios pueden registrarse para acceder a la plataforma.
+      responses:
+        '200':
+          description: Página de registro mostrada.

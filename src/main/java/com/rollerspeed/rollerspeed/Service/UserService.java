@@ -1,10 +1,14 @@
 package com.rollerspeed.rollerspeed.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
+
+
 import com.rollerspeed.rollerspeed.Model.User;
 import com.rollerspeed.rollerspeed.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -12,19 +16,29 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
-
-    public void registerUser(String username, String rawPassword) {
-        // Cifrar la contraseña
-        String encodedPassword = passwordEncoder.encode(rawPassword);
-        
-        // Crear el usuario y guardarlo en la base de datos
-        User newUser = new User();
-        newUser.setUsername(username);
-        newUser.setPassword(encodedPassword);
-        
-        // Guardar el nuevo usuario en el repositorio
-        userRepository.save(newUser);
+    public User saveUser(User user) {
+        // Validación de datos de entrada (ejemplo)
+        if (user.getUsername() == null || user.getUsername().isEmpty()) {
+            throw new IllegalArgumentException("El nombre de usuario no puede estar vacío.");
+        }
+        return userRepository.save(user);
     }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    public void deleteUser(Long id) {
+        try {
+            userRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new RuntimeException("Error al eliminar el usuario: " + e.getMessage());
+        }
+    }
+
+    // Otros métodos de servicio...
 }

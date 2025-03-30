@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reportes de Asistencia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Reportes de Asistencia</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Alumno ID</th>
+                    <th>Clase ID</th>
+                    <th>Fecha</th>
+                    <th>Presente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="asistencia : ${asistencias}">
+                    <td th:text="${asistencia.alumno.id}"></td>
+                    <td th:text="${asistencia.clase.id}"></td>
+                    <td th:text="${asistencia.fecha}"></td>
+                    <td th:text="${asistencia.presente}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

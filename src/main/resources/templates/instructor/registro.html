@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registro de Instructor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Registro de Instructor</h1>
+        <form th:action="@{/instructor/registro}" th:object="${instructor}" method="post">
+            <div class="form-group">
+                <label>Usuario:</label>
+                <input type="text" th:field="*{usuario.username}" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar Instructor</button>
+        </form>
+    </div>
+</body>
+</html>

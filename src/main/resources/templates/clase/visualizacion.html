@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Visualización de Clases</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Visualización de Clases</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Horario</th>
+                    <th>Nivel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="clase : ${clases}">
+                    <td th:text="${clase.nombre}"></td>
+                    <td th:text="${clase.horario}"></td>
+                    <td th:text="${clase.nivel}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

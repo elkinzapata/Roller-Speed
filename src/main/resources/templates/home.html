@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- Asegúrate de incluir el namespace -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Bienvenido, <span th:text="${#authentication.principal.username}"></span>!</h1> <!-- Expresión corregida -->
+        <p>Has iniciado sesión correctamente.</p>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

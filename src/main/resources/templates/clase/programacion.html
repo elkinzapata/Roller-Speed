@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Programación de Clases</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Programación de Clases</h1>
+        <form th:action="@{/clase/programacion}" th:object="${clase}" method="post">
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" th:field="*{nombre}" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Horario:</label>
+                <input type="time" th:field="*{horario}" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Nivel:</label>
+                <input type="text" th:field="*{nivel}" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Programar Clase</button>
+        </form>
+    </div>
+</body>
+</html>

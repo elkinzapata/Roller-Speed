@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reportes de Pagos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Reportes de Pagos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Alumno ID</th>
+                    <th>Fecha de Pago</th>
+                    <th>Monto</th>
+                    <th>Método de Pago</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pago : ${pagos}">
+                    <td th:text="${pago.alumno.id}"></td>
+                    <td th:text="${pago.fechaPago}"></td>
+                    <td th:text="${pago.monto}"></td>
+                    <td th:text="${pago.metodoPago}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
