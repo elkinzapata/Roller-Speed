@@ -31,4 +31,16 @@ public class AsistenciaController {
         model.addAttribute("asistencias", asistenciaService.getAllAsistencias());
         return "asistencia/reportes";
     }
+
+    @GetMapping("/asistencia/visualizacion")
+    public String visualizarAsistencias(Model model) {
+        return "asistencia/visualizacion";
+    }
+
+    @GetMapping("/asistencia/formulario")
+    public String formularioAsistencia() {
+        return "asistencia/formulario";
+    }
+
+
 }

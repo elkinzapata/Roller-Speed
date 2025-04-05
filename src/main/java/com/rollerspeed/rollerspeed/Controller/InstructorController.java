@@ -31,4 +31,16 @@ public class InstructorController {
         // Implementar lógica para obtener clases del instructor
         return "instructor/clases";
     }
+
+    @GetMapping("/instructor/visualizacion")
+    public String visualizarInstructores(Model model) {
+        return "instructor/visualizacion";
+    }
+
+    @GetMapping("/instructor/formulario")
+    public String formularioInstructor() {
+        return "instructor/formulario";
+    }
+
+
 }

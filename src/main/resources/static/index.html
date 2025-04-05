@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡RollerSpeed - La Aventura sobre Ruedas!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fredoka One', cursive;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffdee9, #b5fffc);
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffffcc;
+            color: #ff4d6d;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+            animation: fadeInDown 1s ease-out;
+            border-bottom: 4px solid #ff4d6d;
+        }
+
+        .brand-title {
+            font-size: 36px;
+            color: #ff4d6d;
+            margin: 0;
+        }
+
+        .skate-icon {
+            font-size: 50px;
+            color: #ff4d6d;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ff4d6d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.1);
+        }
+
+        main {
+            padding: 3rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 850px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            color: #ff4d6d;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-size: 1.8rem;
+        }
+
+        p, li {
+            font-size: 1.2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e43f5a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <a href="/home" class="inicio-btn">🏠 Inicio</a>
+    <div class="brand-title">ROLLERSPEED</div>
+    <div class="skate-icon">🛼</div>
+    <h1>¡Bienvenido a RollerSpeed!</h1>
+</header>
+
+    <nav>
+        <ul>
+            <li><a href="#mision">Misión</a></li>
+            <li><a href="#vision">Visión</a></li>
+            <li><a href="#valores">Valores</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#clases">Clases</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="mision">
+            <h2>Nuestra Misión</h2>
+            <p>¡Te llevamos a la diversión sobre ruedas! Queremos que todos, sin importar la edad, disfruten patinando y se sientan geniales.</p>
+        </section>
+
+        <section id="vision">
+            <h2>Nuestra Visión</h2>
+            <p>Queremos ser el lugar favorito para patinar, donde todos encuentren su pasión y se diviertan al máximo.</p>
+        </section>
+
+        <section id="valores">
+            <h2>Lo que Creemos</h2>
+            <ul>
+                <li>¡Sé honesto y juega limpio!</li>
+                <li>¡Dalo todo en cada patinada!</li>
+                <li>¡Siempre hay algo nuevo por aprender!</li>
+                <li>¡Todos somos importantes aquí!</li>
+                <li>¡Juntos somos un gran equipo!</li>
+            </ul>
+        </section>
+
+        <section id="servicios">
+            <h2>¡Lo que Hacemos por Ti - Servicios!</h2>
+            <p>Clases geniales, eventos súper divertidos y consejos para que seas el mejor patinador.</p>
+        </section>
+
+        <section id="clases">
+            <h2>¡A Patinar se ha Dicho!</h2>
+            <p>Clases para todos: si nunca te pusiste patines o eres un experto, ¡te esperamos!</p>
+            <a href="/clase/visualizacion.html" style="text-decoration: none;">
+                <button>Clases</button>
+            </a>
+        </section>
+
+        <section id="eventos">
+            <h2>¡Fiesta sobre Ruedas!</h2>
+            <p>Eventos increíbles para patinar, conocer amigos y pasarla genial.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 RollerSpeed. ¡A patinar se ha dicho!</p>
+    </footer>
+</body>
+</html>

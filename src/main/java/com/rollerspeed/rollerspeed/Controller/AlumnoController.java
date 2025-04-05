@@ -62,4 +62,15 @@ public ResponseEntity<String> testDatabaseConnection() {
         return ResponseEntity.status(500).body("Error en la conexión a la base de datos: " + e.getMessage());
     }
 }
+@GetMapping("/alumno/visualizacion")
+public String visualizarAlumnos(Model model) {
+    return "alumno/visualizacion";
+}
+
+@GetMapping("/alumno/formulario")
+public String formularioAlumno() {
+    return "alumno/formulario";
+}
+
+
 }

@@ -28,9 +28,14 @@ public class ClaseController {
         return "redirect:/clase/visualizacion";
     }
 
-    @GetMapping("/visualizacion")
-    public String mostrarVisualizacion(Model model) {
-        model.addAttribute("clases", claseService.getAllClases());
+    @GetMapping("/clase/visualizacion")
+    public String visualizarClases(Model model) {
+        // Agrega datos al modelo si es necesario
         return "clase/visualizacion";
+    }
+
+    @GetMapping("/clase/formulario")
+    public String formularioClase() {
+        return "clase/formulario";
     }
 }

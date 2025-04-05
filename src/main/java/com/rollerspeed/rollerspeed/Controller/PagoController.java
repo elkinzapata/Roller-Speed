@@ -33,4 +33,17 @@ public class PagoController {
         model.addAttribute("pagos", pagoService.getAllPagos());
         return "pago/reportes";
     }
+
+
+    @GetMapping("/pago/visualizacion")
+    public String visualizarPagos(Model model) {
+        return "pago/visualizacion";
+    }
+
+    @GetMapping("/pago/formulario")
+    public String formularioPago() {
+        return "pago/formulario";
+    }
+
+
 }
